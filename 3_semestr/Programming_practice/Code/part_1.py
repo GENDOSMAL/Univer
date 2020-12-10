@@ -13,7 +13,6 @@ class TryData:
 
     def __init__(self):
         self.expectedCode = random.sample(range(0, 9), 4)
-        print(self.expectedCode)
 
     expectedCode = []
     objectInfo = []
