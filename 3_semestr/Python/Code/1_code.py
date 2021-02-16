@@ -34,5 +34,5 @@ def main():
         print("Ошибка при работе программы ", traceback.format_exc())
 
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+main()
