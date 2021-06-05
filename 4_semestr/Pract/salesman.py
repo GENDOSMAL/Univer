@@ -2,8 +2,6 @@ import itertools
 import math
 import random
 import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
 
 
 class City:
