@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="Пример.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.1326109"
+     inkscape:cx="268.4064"
+     inkscape:cy="301.95719"
+     inkscape:window-width="1718"
+     inkscape:window-height="1408"
+     inkscape:window-x="1713"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="HSL Bumps Alpha"
+       id="filter7492"
+       x="-0.065379745"
+       y="-0.059021493"
+       width="1.1469755"
+       height="1.1317168"
+       inkscape:menu-tooltip="Same as HSL Bumps but with transparent highlights"
+       inkscape:menu="Bumps">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood7482" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite7484" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="6"
+         result="blur"
+         id="feGaussianBlur7486" />
+      <feOffset
+         dx="6"
+         dy="6"
+         result="offset"
+         id="feOffset7488" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="fbSourceGraphic"
+         id="feComposite7490" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix8500" />
+      <feGaussianBlur
+         id="feGaussianBlur8502"
+         result="result0"
+         in="fbSourceGraphic"
+         stdDeviation="0.5" />
+      <feColorMatrix
+         id="feColorMatrix8504"
+         values="1 0 0 -1 0 1 0 1 -1 0 1 0 0 -1 0 -0.8 -1 0 4.4 -2.9 "
+         in="result0"
+         result="fbSourceGraphicAlpha" />
+      <feGaussianBlur
+         id="feGaussianBlur8506"
+         stdDeviation="0.7"
+         in="fbSourceGraphicAlpha"
+         result="result0" />
+      <feSpecularLighting
+         id="feSpecularLighting8508"
+         in="result0"
+         result="result1"
+         lighting-color="rgb(255,255,255)"
+         surfaceScale="-2"
+         specularConstant="1.5"
+         specularExponent="10">
+        <feDistantLight
+           id="feDistantLight8510"
+           elevation="50"
+           azimuth="235" />
+      </feSpecularLighting>
+      <feComposite
+         in2="result1"
+         id="feComposite8512"
+         result="result4"
+         operator="in"
+         in="fbSourceGraphic" />
+      <feComposite
+         in2="result4"
+         id="feComposite8514"
+         operator="arithmetic"
+         k2="1"
+         k3="1" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Слой 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect846"
+       style="fill:#60e800;fill-opacity:1;stroke:#5a3dfd;stroke-width:5.29134;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.93574297;filter:url(#filter7492)"
+       d="M 207.05859 37.146484 L 23.412109 220.79297 C 78.025045 220.79297 98.579019 220.79297 130.62109 220.79297 L 130.62109 393.78125 L 278.06836 393.78125 L 278.06836 220.79297 C 308.84815 220.79297 333.88608 220.79297 385.4082 220.79297 L 207.05859 37.146484 z "
+       transform="scale(0.26458333)" />
+  </g>
+</svg>
