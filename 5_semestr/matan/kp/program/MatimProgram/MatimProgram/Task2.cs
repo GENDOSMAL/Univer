@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using MathNet.Numerics.LinearAlgebra;
 
 namespace MatimProgram
@@ -86,13 +85,10 @@ namespace MatimProgram
             }
             Console.WriteLine("Матрица М_");
             matrixM_.PrintToConsole();
-
-            Console.WriteLine("Матрица B");
+            
             var bMatrix = Matrix<double>.Build.Dense(_mInt + _nInt + 1, 1);
             bMatrix[bMatrix.RowCount - 1, 0] = 1;
-            bMatrix.PrintToConsole();
-
-
+            
             Console.WriteLine("Матрица X");
 
             var inv = matrixM_.Inverse();

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 using MathNet.Numerics.LinearAlgebra;
 
@@ -11,7 +10,7 @@ namespace MatimProgram
     {
         public static void PrintToConsole(this Matrix<double> array)
         {
-            Console.WriteLine(array.ToString(array.RowCount, array.ColumnCount, "f3"));
+            Console.WriteLine(array.ToString(array.RowCount, array.ColumnCount, "f3").Replace(array.ToTypeString(),""));
         }
 
 
