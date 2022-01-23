@@ -20,7 +20,6 @@ namespace MatimProgram
         {
             var matrixNew = Matrix<double>.Build.Dense(_mInt + _nInt + 1, _mInt + _nInt + 1);
 
-
             for (var i = 0; i < _mInt + _nInt; i++)
             {
                 matrixNew[i, i + 1] = _l;
@@ -68,11 +67,11 @@ namespace MatimProgram
             matrixD.PrintToConsole();
             matrixNew.Transpose().PrintToConsole();
             var matrixM = matrixNew.Transpose() - matrixD;
-
+            
             Console.WriteLine("Матрица М");
             matrixM.PrintToConsole();
             // ReSharper disable once InconsistentNaming
-            var matrixM_ = matrixM;
+            var matrixM_ = matrixM.CopyToNew();
             for (var i = 0; i < matrixM_.RowCount; i++)
             {
                 for (var j = 0; j < matrixM_.ColumnCount; j++)

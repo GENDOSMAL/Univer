@@ -11,6 +11,12 @@
     <!--<PackageReference Include="ru.lsreg.math" Version="1.0.1" />-->
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="1taskData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
   <!--<ItemGroup>
     <ProjectReference Include="..\ru.lsreg.math\ru.lsreg.math.csproj" />
   </ItemGroup>-->

@@ -1,16 +1,31 @@
 ﻿using System;
 
-using NumSharp;
-
 namespace MatimProgram
 {
-    class Program
+    public static class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            var task2 = new Task2();
-
-            task2.Make();
+            try
+            {
+                Console.WriteLine("Выполним задание 1");
+                Task1.Make();
+                //if (Console.ReadLine() == "1")
+                //{
+                //    Console.WriteLine("Выполним задание 1");
+                //    Task1.Make();
+                //}
+                //else
+                //{
+                //    Console.WriteLine("Выполним задание 2");
+                //    new Task2().Make();
+                //}
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Ошибка при работе программы");
+                Console.WriteLine(e);
+            }
         }
     }
 }

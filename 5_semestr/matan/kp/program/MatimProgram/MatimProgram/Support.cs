@@ -10,16 +10,33 @@ namespace MatimProgram
     {
         public static void PrintToConsole(this Matrix<double> array)
         {
-            Console.WriteLine(array.ToString(array.RowCount, array.ColumnCount, "f3").Replace(array.ToTypeString(),""));
+            array.PrintToConsole(3);
         }
 
+        public static void PrintToConsole(this Matrix<double> array, int countOf)
+        {
+            Console.WriteLine(array.ToString(array.RowCount, array.ColumnCount, $"f{countOf}").Replace(array.ToTypeString(), ""));
+        }
+
+        public static Matrix<double> GetEmptyMatrix(int rowCount, int columnCount)
+        {
+            return Matrix<double>.Build.Dense(rowCount, columnCount);
+        }
+
+        public static Matrix<double> CopyToNew(this Matrix<double> array)
+        {
+            var res = Matrix<double>.Build.Dense(array.RowCount, array.ColumnCount);
+            array.CopyTo(res);
+
+            return res;
+        }
 
         public static void PrintNdArrayToConsole(this NDArray array)
         {
             Console.Write($"{Environment.NewLine}[");
             for (var i = 0; i < array.Shape[0]; i++)
             {
-               
+
                 if (array.shape.Length == 1)
                 {
                     Console.Write(i == array.Shape[0] - 1
@@ -37,7 +54,7 @@ namespace MatimProgram
                     }
                     Console.Write($"] {Environment.NewLine}");
                 }
-                
+
             }
 
             Console.Write($"] {Environment.NewLine}");
