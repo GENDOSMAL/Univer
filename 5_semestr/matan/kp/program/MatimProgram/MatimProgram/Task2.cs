@@ -140,7 +140,7 @@ namespace MatimProgram
             Console.WriteLine("Задание G.");
 
             var resOf = new List<double>();
-            for (var i = 0; i < _m - 1; i++)
+            for (var i = 0; i < _m; i++)
             {
                 resOf.Add(xNormal[i]);
             }

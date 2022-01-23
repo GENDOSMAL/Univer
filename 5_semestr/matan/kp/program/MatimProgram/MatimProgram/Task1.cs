@@ -9,6 +9,7 @@ namespace MatimProgram
 {
     public class Task1
     {
+        private static Dictionary<Index, double> _someMatrix = new();
         public static void Make()
         {
             Console.WriteLine("Считываем исходную матрицу из файла!");
@@ -19,7 +20,7 @@ namespace MatimProgram
             Console.WriteLine("Задание 1.");
             Console.WriteLine("Возводим матрицу в степень 5");
             var matrixOfFirst = matrix.Power(5);
-            Console.WriteLine($"Вероятность перехода [{matrixOfFirst[9, 5]}]");
+            Console.WriteLine($"Вероятность перехода [{matrixOfFirst[9 - 1, 5 - 1]}]");
 
             Console.WriteLine();
             Console.WriteLine("Задание 2.");
@@ -29,7 +30,7 @@ namespace MatimProgram
 
             Console.WriteLine();
             Console.WriteLine("Задание 3.");
-            Console.WriteLine($"Вероятность первого перехода за 6 шагов из состояния 6 в состояние 11 равно [{Task3(matrix, 6, 6, 11)}]");
+            Console.WriteLine($"Вероятность первого перехода за 6 шагов из состояния 6 в состояние 11 равно [{Task3(matrix, 6, 11, 6)}]");
 
             Console.WriteLine();
             Console.WriteLine("Задание 4.");
@@ -41,14 +42,17 @@ namespace MatimProgram
 
             Console.WriteLine();
             Console.WriteLine("Задание 6.");
+            _someMatrix = new Dictionary<Index, double>();
             Console.WriteLine($"Вероятность первого возвращения в состояние 3 за 7 шагов [{Task6(matrix, 3, 7)}]");
 
             Console.WriteLine();
             Console.WriteLine("Задание 7.");
+            _someMatrix = new Dictionary<Index, double>();
             Console.WriteLine($"Вероятность возвращения в состояние 13 не позднее чем за 7 шагов [{Task7(matrix, 13, 7)}]");
 
             Console.WriteLine();
             Console.WriteLine("Задание 8.");
+            _someMatrix = new Dictionary<Index, double>();
             Console.WriteLine($"Среднее время возвращение в состояние 11 [{Task8(matrix, 11)}]");
 
 
@@ -56,10 +60,10 @@ namespace MatimProgram
             Console.WriteLine("Задание 9.");
 
             var eMatr = Matrix<double>.Build.DenseDiagonal(matrix.RowCount, 1);
-          
+
 
             var matrM = matrix.Transpose() - eMatr;
-        
+
             // ReSharper disable once InconsistentNaming
             var matrixM_ = matrM.CopyToNew();
             for (var i = 0; i < matrixM_.RowCount; i++)
@@ -98,9 +102,9 @@ namespace MatimProgram
         private static double Task8(Matrix<double> sourse, int desteny)
         {
             var buffer = new List<double>();
-            for (var i = 1; i < 20; i++)
+            for (var i = 1; i < 1000; i++)
             {
-                buffer.Add(i * Task6(sourse, desteny - 1, i));
+                buffer.Add(i * Task6(sourse, desteny, i));
             }
 
             return buffer.Sum();
@@ -111,7 +115,7 @@ namespace MatimProgram
             var buffer = new List<double>();
             for (var i = 1; i < n + 1; i++)
             {
-                buffer.Add(Task6(sourse, desteny - 1, i));
+                buffer.Add(Task6(sourse, desteny, i));
             }
 
             return buffer.Sum();
@@ -122,7 +126,23 @@ namespace MatimProgram
             var resultM = Support.GetEmptyMatrix(sourse.RowCount, sourse.ColumnCount);
             for (var i = 1; i < n; i++)
             {
-                resultM += Task6(sourse, start, i) * sourse.Power(n - i);
+                double temp;
+                var ind = new Index()
+                {
+                    Start = start,
+                    I = i
+                };
+                if (!_someMatrix.ContainsKey(ind))
+                {
+                    temp = Task6(sourse, start, i);
+                    _someMatrix.Add(ind, temp);
+                }
+                else
+                {
+                    temp = _someMatrix[ind];
+                }
+
+                resultM += temp * sourse.Power(n - i);
             }
 
             resultM = sourse.Power(n) - resultM;
@@ -252,8 +272,8 @@ namespace MatimProgram
             res[0, 0] = double.Parse("0,02");
             res[0, 1] = double.Parse("0,12");
             res[0, 2] = double.Parse("0,03");
-            res[0, 3] = double.Parse("0,013");
-            res[0, 4] = double.Parse("0,01");
+            res[0, 3] = double.Parse("0,13");
+            res[0, 4] = double.Parse("0,1");
             res[0, 5] = double.Parse("0,07");
             res[0, 6] = double.Parse("0,15");
             res[0, 7] = double.Parse("0,03");
