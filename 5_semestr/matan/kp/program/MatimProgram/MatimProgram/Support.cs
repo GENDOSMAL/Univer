@@ -2,7 +2,6 @@
 
 using MathNet.Numerics.LinearAlgebra;
 
-
 namespace MatimProgram
 {
     public static class Support

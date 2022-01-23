@@ -91,7 +91,7 @@ namespace MatimProgram
             xNormal.PrintArray();
 
             var result = xNormal.Sum();
-            Console.WriteLine($"Сумма вероятностей [{result}] еденица");
+            Console.WriteLine($"Сумма вероятностей [{result}] единица");
 
         }
 

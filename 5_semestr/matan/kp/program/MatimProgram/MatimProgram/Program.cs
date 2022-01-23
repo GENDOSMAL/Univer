@@ -8,18 +8,16 @@ namespace MatimProgram
         {
             try
             {
-                Console.WriteLine("Выполним задание 1");
-                Task1.Make();
-                //if (Console.ReadLine() == "1")
-                //{
-                //    Console.WriteLine("Выполним задание 1");
-                //    Task1.Make();
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Выполним задание 2");
-                //    new Task2().Make();
-                //}
+                if (Console.ReadLine() == "1")
+                {
+                    Console.WriteLine("Выполним задание 1");
+                    Task1.Make();
+                }
+                else
+                {
+                    Console.WriteLine("Выполним задание 2");
+                    new Task2().Make();
+                }
             }
             catch (Exception e)
             {

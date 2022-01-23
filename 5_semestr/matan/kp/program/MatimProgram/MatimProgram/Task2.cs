@@ -31,11 +31,7 @@ namespace MatimProgram
             Console.WriteLine("Задание А.");
             Console.WriteLine("Матрица интенсивности переходов");
             matrixNew.PrintToConsole();
-
-            Console.WriteLine();
-            Console.WriteLine("Задание B.");
-            Console.WriteLine("Посчтитаем  диаганальную матрицу D");
-
+            
             var matrixSumm = new double[_mInt + _nInt + 1];
 
             for (var i = 0; i < matrixNew.RowCount; i++)
@@ -47,10 +43,7 @@ namespace MatimProgram
                 }
                 matrixSumm[i] = sum;
             }
-
-            Console.WriteLine("Сумма строк матрицы интенсивности");
-            matrixSumm.PrintArray();
-            Console.WriteLine("Размещаем ее на диагонали");
+            
             var matrixD = Matrix<double>.Build.Dense(_mInt + _nInt + 1, _mInt + _nInt + 1);
 
             for (var i = 0; i < matrixD.RowCount; i++)
@@ -64,12 +57,7 @@ namespace MatimProgram
                 }
             }
 
-            matrixD.PrintToConsole();
-            matrixNew.Transpose().PrintToConsole();
             var matrixM = matrixNew.Transpose() - matrixD;
-            
-            Console.WriteLine("Матрица М");
-            matrixM.PrintToConsole();
             // ReSharper disable once InconsistentNaming
             var matrixM_ = matrixM.CopyToNew();
             for (var i = 0; i < matrixM_.RowCount; i++)
@@ -82,16 +70,11 @@ namespace MatimProgram
                     }
                 }
             }
-            Console.WriteLine("Матрица М_");
-            matrixM_.PrintToConsole();
             
             var bMatrix = Matrix<double>.Build.Dense(_mInt + _nInt + 1, 1);
             bMatrix[bMatrix.RowCount - 1, 0] = 1;
             
-            Console.WriteLine("Матрица X");
-
             var inv = matrixM_.Inverse();
-            inv.PrintToConsole();
             var x = inv * bMatrix;
 
             var xNormal = new double[_mInt + _nInt + 1];
@@ -109,6 +92,7 @@ namespace MatimProgram
             var res = xNormal.Sum();
             Console.WriteLine($"Сумма вероятностей [{res}] почти еденица, но списать можно на погрешность ибо числа слишком маленькие");
             Console.WriteLine();
+            Console.WriteLine("Задание B.");
             Console.WriteLine($"Вероятность отказа от обслуживания [{xNormal[_nInt + _mInt]}]");
             Console.WriteLine();
             Console.WriteLine("Задание C.");
