@@ -7,8 +7,6 @@
 
   <ItemGroup>
     <PackageReference Include="MathNet.Numerics" Version="4.15.0" />
-    <PackageReference Include="NumSharp" Version="0.30.0" />
-    <!--<PackageReference Include="ru.lsreg.math" Version="1.0.1" />-->
   </ItemGroup>
 
   <ItemGroup>
@@ -16,9 +14,4 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
-  <!--<ItemGroup>
-    <ProjectReference Include="..\ru.lsreg.math\ru.lsreg.math.csproj" />
-  </ItemGroup>-->
-
 </Project>
