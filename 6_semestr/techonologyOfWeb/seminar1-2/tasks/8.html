@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 8</title>
+</head>
+
+<body>
+    <!-- Через html -->
+    <!-- span чтобы было в одну строку -->
+    <span style="color: antiquewhite;">1</span>
+    <span style="color: gray;">2</span>
+    <span style="color: firebrick;">3</span>
+    <span style="color: gold;">4</span>
+    <span style="color: red;">5</span>
+    <span style="color: violet;">6</span>
+    <span style="color: aquamarine;">7</span>
+    <span style="color: saddlebrown;">8</span>
+    <span style="color: darkblue;">9</span>
+    <span style="color: blueviolet;">10</span><br>
+    <br>
+
+    <!-- Через js -->
+    <script>
+        for (let index = 1; index <= 10; index++) {
+            var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            document.write('<span style="color:' + randomColor + '">' + index + ' </span>');
+        }
+    </script>
+</body>
+
+</html>
+<h1></h1>

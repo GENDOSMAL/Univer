@@ -1,0 +1,39 @@
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 14</title>
+</head>
+
+<body>
+    <!-- Через html -->
+    <h1>Не алфавитный список</h1>
+    <p>1:Михаил</p>
+    <p>2:Максим</p>
+    <p>3:Лев</p>
+    <p>4:Артем</p>
+    <p>5:Марк</p>
+    <h1>Алфавитный список</h1>
+    <p>1:Артем</p>
+    <p>2:Лев</p>
+    <p>3:Максим</p>
+    <p>4:Марк</p>
+    <p>5:Михаил</p>
+    <br>
+
+    <!-- Через js -->
+    <script>
+        var array = new Array("Михаил", "Максим", "Лев", "Артем", "Марк")
+        document.write('<h1>Не алфавитный список</h1>');
+        for (let index = 0; index < array.length; index++) {
+            document.write('<p>' + (index + 1) + ':' + array[index] + '' + '</p>')
+        }
+        var sorted = array.sort();
+        document.write('<h1>Алфавитный список</h1>');
+        for (let index = 0; index < array.length; index++) {
+            document.write('<p>' + (index + 1) + ':' + sorted[index] + '' + '</p>')
+        }
+    </script>
+</body>
+
+</html>

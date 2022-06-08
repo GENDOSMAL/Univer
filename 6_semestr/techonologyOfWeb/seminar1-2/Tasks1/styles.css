@@ -1,0 +1,58 @@
+body {
+  text-align: center;
+  background-color: #b4b4b4;
+}
+
+#title {
+  color: white;
+}
+
+#survey-form {
+  /*   background-color: rgb(213, 224, 227); */
+  /*   width: 900px; */
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.row-tab {
+  display: block;
+  padding-top: 20px;
+}
+
+.label-name {
+  display: inline-block;
+  width: 40%;
+  text-align: right;
+}
+
+.input-name {
+  display: inline-block;
+  text-align: left;
+  width: 48%;
+}
+
+.select-input {
+  display: inline-block;
+  text-align: left;
+  width: 48%;
+}
+
+.label-select {
+  display: inline-block;
+  width: 40%;
+  text-align: right;
+}
+
+.submit {
+  padding-top: 20px;
+}
+
+.form-group {
+  margin: 0 auto 1.25rem auto;
+  padding: 0.25rem;
+}
+
+.placeHolder {
+  width: 400px;
+  height: 85px;
+}

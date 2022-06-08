@@ -1,0 +1,312 @@
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Семинар 11-12</title>
+</head>
+
+<body>
+    <h1>Задание 1</h1>
+    <script>
+        var city1 = {};
+        city1.name = "ГородN";
+        city1.population = 10000000
+        document.write("Название: " + city1.name + "<br>")
+        document.write("Население: " + city1.population + "<br>")
+    </script>
+    <br>
+    <h1>Задание 2</h1>
+    <script>
+        var city2 = {};
+        city2.name = "ГородM";
+        city2.population = 1e6
+        document.write("Название: " + city2.name + "<br>")
+        document.write("Население: " + city2.population + "<br>")
+    </script>
+    <br>
+    <h1>Задание 3</h1>
+    <script>
+        city2.getName = city1.getName = function () { return this.name; }
+        document.write("Название через getName у первого города: " + city1.getName() + "<br>")
+        document.write("Название через getName у второго города: " + city2.getName() + "<br>")
+    </script>
+    <br>
+    <h1>Задание 4</h1>
+    <script>
+        city2.exportStr = city1.exportStr = function () { return `name=${this.getName()}<br>population=${this.population}<br>` }
+        document.write("Значение у первого:<br>" + city1.exportStr() + "<br>")
+        document.write("Значение у второго:<br>" + city2.exportStr() + "<br>")
+    </script>
+    <br>
+    <h1>Задание 5</h1>
+    <script>
+        function getObj() { return this; }
+        city1.getCity = city2.getCity = getObj;
+        document.write("Значение у первого:<br>" + city1.getCity().getName() + " " + city1.getCity().population + "<br>")
+        document.write("Значение у второго:<br>" + city2.getCity().getName() + " " + city2.getCity().population + "<br>")
+    </script>
+    <br>
+    <h1>Задание 6</h1>
+    <script>
+        var obj = {};
+        obj.method1 = getObj
+        obj.method2 = getObj
+        obj.method3 = function () { return "метод3" }
+        document.write("Результат:<br>" + obj.method1().method2().method3() + "<br>")
+    </script>
+    <br>
+    <h1>Задание 7</h1>
+    <script>
+        var d1 = new Array(45, 78, 10, 3)
+        d1[7] = 100;
+        var res = "";
+        for (let index = 0; index < d1.length; index++) {
+            res = res + " [" + index + ":" + d1[index] + "]"
+        }
+        document.write("Массив по итогу:" + res + "<br>")
+        document.write("Значение в индексе 6 :" + d1[6] + "<br>")
+        document.write("Значение в индексе 7 :" + d1[7] + "<br>")
+    </script>
+    <br>
+    <h1>Задание 8</h1>
+    <script>
+        var d2 = new Array(45, 78, 10, 3)
+        var sum2 = 0;
+        for (let index = 0; index < d2.length; index++) {
+            sum2 = sum2 + d2[index]
+        }
+        document.write("Сумма элементов массива:" + sum2 + "<br>")
+    </script>
+    <br>
+    <h1>Задание 9</h1>
+    <script>
+        var d3 = new Array(45, 78, 10, 3)
+        d3[7] = 100;
+        var sum3 = 0;
+        for (let el in d3) {
+            sum3 += d3[el]
+        }
+        document.write("Сумма элементов массива c учетом добавления:" + sum3 + "<br>")
+    </script>
+    <br>
+    <h1>Задание 10</h1>
+    <script>
+        var d4 = new Array(45, 78, 10, 3)
+        var res = "";
+        for (let index = 0; index < d4.length; index++) {
+            res = res + " [" + index + ":" + d4[index] + "]"
+        }
+        document.write("Массив исходный:" + res + "<br>")
+        d4.sort(function my(a, b) {
+            return b - a
+        })
+        var res = "";
+        for (let index = 0; index < d4.length; index++) {
+            res = res + " [" + index + ":" + d4[index] + "]"
+        }
+        document.write("Массив по итогу:" + res + "<br>")
+    </script>
+    <br>
+    <h1>Задание 11</h1>
+    <script>
+        var d4 = new Array();
+        for (let i = 0; i < 3; i++) {
+            d4[i] = new Array();
+            for (let j = 0; j < 4; j++) {
+                d4[i][j] = 5;
+            }
+        }
+        var res = "";
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 4; j++) {
+                res = res + " " + d4[i][j]
+            }
+            res = res + "<br>"
+        }
+        document.write("Матрица по итогу:<br>" + res + "<br>")
+    </script>
+    <br>
+    <h1>Задание 12</h1>
+    <script>
+        function Vector(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+        Vector.prototype.plus = function plus(otherVector) {
+            var x = this.x + otherVector.x;
+            var y = this.y + otherVector.y;
+            return new Vector(x, y);
+        };
+        Vector.prototype.minus = function minus(otherVector) {
+            var x = this.x - otherVector.x;
+            var y = this.y - otherVector.y;
+            return new Vector(x, y);
+        };
+
+        Vector.prototype.length = function length() {
+            return Math.sqrt((this.x * this.x) + (this.y * this.y));
+        }
+
+        Vector.prototype.toStr = function () {
+            return `[x:${this.x}][y:${this.y}]`
+        }
+
+        document.write("Результат сложения 2 векторов:" + new Vector(1, 2).plus(new Vector(2, 3)).toStr() + "<br>")
+        document.write("Результат вычитания 2 векторов:" + new Vector(1, 2).minus(new Vector(2, 3)).toStr() + "<br>")
+        document.write("Длина вектора:" + new Vector(3, 4).length() + "<br>")
+    </script>
+    <br>
+    <h1>Задание 13 не сделано ибо не понятно про какую книгу идет речь</h1>
+    <br>
+    <h1>Задание 14 смотреть в консоли</h1>
+    <script>
+        function logFive(sequence) {
+            for (var i = 0; i < 5; i++) {
+                if (!sequence.next())
+                    break;
+                console.log(sequence.current());
+            }
+        }
+
+        function ArraySeq(array) {
+            this.pos = -1;
+            this.array = array;
+        }
+
+        ArraySeq.prototype.next = function () {
+            if (this.pos >= this.array.length - 1)
+                return false;
+            this.pos++;
+            return true;
+        };
+
+        ArraySeq.prototype.current = function () {
+            return this.array[this.pos];
+        };
+
+        function RangeSeq(from, to) {
+            this.pos = from - 1;
+            this.to = to;
+        }
+
+        RangeSeq.prototype.next = function () {
+            if (this.pos >= this.to)
+                return false;
+            this.pos++;
+            return true;
+        };
+
+        RangeSeq.prototype.current = function () {
+            return this.pos;
+        };
+
+        logFive(new ArraySeq([1, 2]));
+        logFive(new RangeSeq(100, 1000));
+    </script>
+    <br>
+    <h1>Задание 15</h1>
+    <script>
+        function Card(from, to) {
+            this.from = from;
+            this.to = to;
+            this.show = function () {
+                return this.from + ":" + this.to;
+            };
+        }
+        var c1 = new Card("Москва", "Екатеринбург");
+        document.write("Некоторые данные о карте: " + c1.show() + "<br>")
+    </script>
+    <br>
+    <h1>Задание 16</h1>
+    <script>
+        class Human {
+            constructor(name, age, height) {
+                this.name = name;
+                this.age = age;
+                this.height = height;
+            }
+
+            getInfo() {
+                return this.name + ", " + this.age + ", " + this.height;
+            }
+
+            get firstname() {
+                return this.name;
+            }
+        }
+
+        var humans = [
+            new Human("Коля", 23, 180),
+            new Human("Даша", 19, 170),
+            new Human("Ваня", 18, 192),
+            new Human("Петя", 45, 178),
+            new Human("Вася", 34, 197),
+            new Human("Джони", 40, 168),
+            new Human("Катя", 37, 160),
+            new Human("Петя", 29, 200),
+            new Human("Соня", 21, 172),
+            new Human("Женя", 25, 175)
+        ];
+
+        var res = "<br>"
+        for (let index = 0; index < humans.length; index++) {
+            res = res + humans[index].getInfo() + "<br>"
+        }
+
+        document.write("Заполненые данные о людях: " + res)
+        document.write("Получение имени у рандомного человека: " + humans[Math.floor(Math.random() * (humans.length - 0) + 0)].firstname)
+
+    </script>
+    <br>
+    <h1>Задание 17</h1>
+    <script>
+        var res1 = "<br>"
+        for (let index = 0; index < humans.length; index++) {
+            res1 = res1 + humans[index].getInfo() + "<br>"
+        }
+        humans.sortByHeight = function () {
+            humans.sort(function my(a, b) {
+                return b.height - a.height
+            })
+        }
+
+        humans.sortByName = function () {
+            humans.sort((a, b) => a.name.localeCompare(b.name))
+        }
+
+        humans.sortByHeight();
+        var resAfterSort = "<br>"
+        for (let index = 0; index < humans.length; index++) {
+            resAfterSort = resAfterSort + humans[index].getInfo() + "<br>"
+        }
+        document.write("Изначально заполненные данные о людях: " + res1)
+        document.write("Сортированные данные о людях: " + resAfterSort)
+    </script>
+    <br>
+    <h1>Задание 18</h1>
+    <script>
+        var dt1 = new Date("2045-01-01T00:00:00");
+        document.write("Дата в 2045 году: " + dt1.toLocaleDateString() + "<br>")
+    </script>
+    <br>
+    <h1>Задание 19</h1>
+    <script>
+        var dt2 = (Date.now() - new Date("1970-01-01T00:00:00")) / 1000;
+        document.write("Количество секунд с 1970: " + Math.floor(dt2) + "<br>")
+    </script>
+    <br>
+    <h1>Задание 20</h1>
+    <script>
+        function getDays(y, m) {
+            return new Date(y, m, 0).getDate();
+        }
+
+        var currentTime = new Date()
+        var month = currentTime.getMonth() + 1
+        var year = currentTime.getFullYear()
+        document.write("Текущий месяц: "+month+" текущий год "+year+" количество дней в текущем месяце " + getDays(year,month))
+    </script>
+    <br>
+</body>
+
+</html>

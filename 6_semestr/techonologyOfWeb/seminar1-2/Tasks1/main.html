@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles.css" rel="stylesheet">
+    <title>Опрос</title>
+</head>
+
+<body>
+    <h1 id="title">Опрос</h1>
+    <form id="survey-form">
+        <p> Расскажите о положительном опыте, который у вас есть.</p>
+        <div class="row-tab">
+            <div class="label-name">
+                <label>Имя:</label>
+            </div>
+            <div class="input-name">
+                <input name="firstName" type="First Name" placeholder="Имя">
+            </div>
+        </div>
+        <div class="row-tab">
+            <div class="label-name">
+                <label>Фамилия:</label>
+            </div>
+            <div class="input-name">
+                <input name="lastName" type="Last Name" placeholder="Фамилия">
+            </div>
+        </div>
+        <div class="row-tab">
+            <div class="label-name">
+                <label>Возраст:</label>
+            </div>
+            <div class="input-name">
+                <input name="age" min="0" max="100" type="number" placeholder="Возраст">
+            </div>
+        </div>
+        <div class="row-tab">
+            <div class="label-name">
+                <label>Почта:</label>
+            </div>
+            <div class="input-name">
+                <input name="email" type="email" placeholder="Почта">
+            </div>
+        </div>
+        <div class="row-tab">
+            <div class="label-select">
+                <label> Выберите ваш опыт. От 1-5. </label>
+            </div>
+            <div class="select-input">
+                <select name="exp" id="cars">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="row-tab">
+                <textarea name="aditText" class="placeHolder" placeholder="Опишите ваш опыт тут . . ."></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" id="submit" class="submit-button">
+                Отправить</button>
+        </div>
+    </form>
+</body>
