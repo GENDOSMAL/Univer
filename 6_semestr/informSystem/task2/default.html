@@ -8,15 +8,27 @@
 <body>
     <script>
         function makeFirst() {
+            window.location.href = 'http://localhost:3000';
             var result = parseInt(prompt("Введите длину списка для поиска в нем", "10"));
             var array = getRandomArray(result);
-            var paramToFound = prompt("Введите индекс значение элеменента для поиска из массива ниже \n[" + outArray(array) + "]", "4")
-            window.open("/" + 1 + "?f=" + paramToFound + "&a=" + outArrayForLink(array))
+            var paramToFound = prompt("Введите значение элеменента для поиска из массива ниже \n[" + outArray(array) + "]", "4")
+            var link = "/" + 1 + "?f=" + paramToFound + "&a=" + outArrayForLink(array);
+            var d = window.open(link, "_blank")
+            if (d) {
+                d.focus();
+            } else {
+                alert('Разрешите открывать окна. Костыль и js одно целое!');
+            }
         }
 
         function makeSecond() {
             var result = prompt("Введите среднее число дней на вашей планете чтобы понять когда год високостный", "365.5");
-            window.open("/"+2+"?d="+result)
+            var d = window.open("/" + 2 + "?d=" + result);
+            if (d) {
+                d.focus();
+            } else {
+                alert('Разрешите открывать окна. Костыль и js одно целое!');
+            }
         }
 
         function getRandomArray(length) {

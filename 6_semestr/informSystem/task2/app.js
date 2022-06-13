@@ -16,15 +16,15 @@ app.get('/1', function (req, res) {
   for (let i = 0; i < sourceArray.length; i++) {
     sourceArray[i] = parseInt(sourceArray[i])
   }
+  
   sourceArray = sourceArray.sort(function (a, b) {
     return a - b;
   });
-  console.log(sourceArray);
-  resut += "Исходный массив  " + outArray(sourceArray) + "<br>"
-  resut += "Параметр для поиска " + intToFound + "<br>"
+
+  resut += "Исходный массив  " + outArray(sourceArray) + "<br>";
+  resut += "Параметр для поиска " + intToFound + "<br>";
   var indexOfSearchItems = binarySearch(intToFound, sourceArray)
-  console.log(indexOfSearchItems);
-  console.log(intToFound);
+
   if (indexOfSearchItems == -1) {
     resut += "<h1>Элемент НЕ найден в списке</h1>"
   }
