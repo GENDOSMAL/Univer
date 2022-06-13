@@ -1,0 +1,58 @@
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Малкеров Г.А. Задание 2</title>
+</head>
+
+<body>
+    <script>
+        function makeFirst() {
+            var result = parseInt(prompt("Введите длину списка для поиска в нем", "10"));
+            var array = getRandomArray(result);
+            var paramToFound = prompt("Введите индекс значение элеменента для поиска из массива ниже \n[" + outArray(array) + "]", "4")
+            window.open("/" + 1 + "?f=" + paramToFound + "&a=" + outArrayForLink(array))
+        }
+
+        function makeSecond() {
+            var result = prompt("Введите среднее число дней на вашей планете чтобы понять когда год високостный", "365.5");
+            window.open("/"+2+"?d="+result)
+        }
+
+        function getRandomArray(length) {
+            var array = new Array(length);
+            for (let i = 0; i < array.length; i++) {
+                array[i] = getRandomInt(50)
+            }
+            return array;
+        }
+
+        function outArray(array) {
+            var res = "";
+            for (let i = 0; i < array.length; i++) {
+                res += `${array[i]} `
+            }
+            return res;
+        }
+
+        function outArrayForLink(array) {
+            var res = "";
+            for (let i = 0; i < array.length; i++) {
+                res += `${array[i]}_`
+            }
+
+            if (res.endsWith("_"))
+                res = res.substring(0, res.length - 1)
+
+            return res;
+        }
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+    </script>
+    <a href="" onclick="makeFirst()">Задание 1</a><br />
+    <a href="" onclick="makeSecond()">Задание 2</a><br />
+</body>
+
+</html>
