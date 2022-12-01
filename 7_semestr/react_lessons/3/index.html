@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Задание 3</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+</head>
+<body>
+
+   <script type="text/babel"> 
+    
+    const userClassName = "user-info";
+    
+    const styleObj = { //Блок стилей
+        color:'green', 
+        fontFamily:'Arial'
+    };
+
+    const counter = { //Счётчик
+        first: 1,
+        second: 2,
+
+        getSumm: function(){ 
+            return `${this.first} + ${this.second} = ${this.first + this.second}`;
+        }
+
+    }
+
+    const user = { //Блок пользователя
+        id : 4,
+        age: 23,
+        firstName: 'Геннадий',
+        lastName: 'Малкеров',
+        
+        getFullName: function(){ 
+            return `${this.firstName} ${this.lastName}`;
+        }
+    };
+
+    ReactDOM.render( //Блок сборки
+        <div className={userClassName}  style={styleObj}>
+                <p>ФИО: {user.getFullName()}</p>
+                <p>Возраст: {user.age}</p>
+                <p>Сумма: {counter.getSumm()}</p>
+        </div>,
+        document.getElementById("app")
+    )
+
+   </script>
+
+   <div id="app"></div>
+
+</body>
+</html> 
