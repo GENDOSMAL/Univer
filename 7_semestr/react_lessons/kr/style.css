@@ -1,0 +1,140 @@
+body {
+    text-align: center;
+}
+
+#top {
+    /* Верхняя часть с заголовком страницы */
+    background: rgb(191, 230, 137);
+    text-align: center;
+    border: solid 1px black;
+    padding: 15px 0 15px 10px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(19, 18, 18);
+}
+
+#bottom {
+    /* Нижняя часть */
+    color: rgb(0, 0, 0);
+    background: rgb(193, 230, 137);
+    border: solid 1px black;
+    font-size: 16px;
+    padding: 3px;
+    text-align: center;
+}
+
+legend {
+    color: #000000;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.form {
+    background: rgb(201, 230, 137);
+    border-color: #000000fa;
+    border-style: solid 1px black;
+    font-size: 90%;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.data-grid {
+    width: 100%;
+    letter-spacing: 0;
+    padding-top: 5;
+
+}
+
+.left-table {
+    width: 200px;
+    box-align: top;
+}
+
+.right-table {
+    box-align: top;
+}
+
+.send-button {
+    background: rgb(154, 220, 143);
+    border: none;
+    padding: 15px 32px;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    border-color: rgb(141, 173, 127);
+    border-style: solid;
+    padding: 5px;
+    text-align: center;
+}
+
+.clear-button {
+    background: rgb(201, 214, 199);
+    border: none;
+    padding: 15px 32px;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    border-color: rgb(141, 173, 127);
+    border-style: solid;
+    padding: 5px;
+}
+
+.image {
+    display: grid;
+    grid-template-columns:  max-content max-content;
+    align-items: center;
+    justify-content: center;
+}
+
+.features-block {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.features-block span img {
+    width: 200px;
+    height: auto;
+    background: rgb(43, 160, 98);
+}
+
+body {
+    background-color: rgb(218, 231, 213);
+}
+
+.captionOfTable {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.headerSales{
+    font-size: 24;
+    font-style: initial;
+}
+
+.storeImage{
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.second{
+    margin-left: 30px;
+}
+
+.first{
+    margin-right: 30px;
+}
+
+table{
+    margin-bottom: 15px;
+}
+
+.buttons{
+    display: flex;
+    justify-content:space-evenly;
+}
