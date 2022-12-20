@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="#8CA671"
+    tools:context=".SignUp">
+
+    <EditText
+        android:id="@+id/loginSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Логин"
+        android:layout_marginTop="50dp"
+        />
+
+    <EditText
+        android:id="@+id/passwordSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Пароль"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/loginSignUp"
+        android:inputType="textPassword"
+        />
+
+    <EditText
+        android:id="@+id/rePasswordSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Повторите пароль"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/passwordSignUp"
+        />
+
+    <Button
+        android:id="@+id/makeRegisterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Зарегестироваться"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/rePasswordSignUp"/>
+</RelativeLayout>

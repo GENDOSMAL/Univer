@@ -1,0 +1,22 @@
+body{
+    background-color:cornsilk;
+}
+
+.inputCommon {
+    margin-bottom: 10px;
+}
+
+.centered {
+    position: fixed;
+    /* or absolute */
+    left: 44%;
+}
+
+
+
+button{
+    width: 149px;
+    color: aqua;
+    height: 40px;
+    background-color: blue;
+}
