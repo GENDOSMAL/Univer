@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Малкеров Г.А. Экзамен</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <script>
+        function onButtonClick() {
+            var currentdate = new Date();
+            var someToDate = document.getElementById('firstInput')
+            var someToTime = document.getElementById('secondInput')
+            var date = `${currentdate.getDate()}.${(currentdate.getMonth() + 1)}.${currentdate.getFullYear()}`;
+            var time = `${currentdate.getHours()}.${currentdate.getMinutes()}:${currentdate.getSeconds()}`
+            if (getRandomInt(2) == 1) {
+                someToDate.value = date
+                someToTime.value = time;
+            }
+            else {
+                someToTime.value = date
+                someToDate.value = time
+            }
+
+            someToDate.style.color = getRandomColor()
+            someToDate.style.backgroundColor = getRandomColor()
+            
+            someToTime.style.color = getRandomColor()
+            someToTime.style.backgroundColor = getRandomColor()
+        }
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        function getRandomColor() {
+            return `#${Math.floor(Math.random() * 16777215).toString(16)}`
+        }
+    </script>
+</head>
+
+<body class="centered">
+    <div class="inputCommon">
+        <input type="text" id="firstInput" name="date" size="20">
+    </div>
+    <div class="inputCommon">
+        <input type="text" id="secondInput" name="time" size="20">
+    </div>
+
+
+
+    <button onclick="onButtonClick()">Жми</button>
+</body>
+
+</html>
